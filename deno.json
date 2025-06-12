@@ -1,0 +1,13 @@
+{
+  "lock": false,
+  "tasks": {
+    "start": "deno serve main.tsx"
+  },
+  "imports": {
+    "@fartlabs/rtx": "jsr:@fartlabs/rtx@^0.0.15"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@fartlabs/rtx"
+  }
+}
