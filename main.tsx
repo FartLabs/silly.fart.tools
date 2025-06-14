@@ -50,28 +50,30 @@ const router = (
       pattern="/"
       handler={() =>
         new Response(
-          "<h1>Welcome to <code>silly.fart.tools</code></h1>" +
+          "<html>" +
+            "<head>" +
+            // Adding a link tag for external CSS
+            '<link rel="stylesheet" type="text/css" href="https://css.fart.tools">' +
+            "</head>" +
+            "<body>" +
+            "<h1>Welcome to <code>silly.fart.tools</code></h1>" +
             "<h2>Directory</h2>" +
             "<ul>" +
             '<li><a href="/jokes">Jokes</a>, <a href="/jokes/random">Random Joke</a></li>' +
             '<li><a href="/shits">Shits</a>, <a href="/shits/random">Random Shit</a></li>' +
-            "</ul>",
-          { headers: { "Content-Type": "text/html" } },
-        )}
+            "</ul>" +
+            "</body>" +
+            "</html>",
+          { headers: { "Content-Type": "text/html" } }
+        )
+      }
     />
-    <Get
-      pattern="/jokes"
-      handler={() =>
-        Response.json(sillyJokes)}
-    />
+    <Get pattern="/jokes" handler={() => Response.json(sillyJokes)} />
     <Get
       pattern="/jokes/random"
       handler={() => new Response(pickRandom(sillyJokes))}
     />
-    <Get
-      pattern="/shits"
-      handler={() => Response.json(sillyShits)}
-    />
+    <Get pattern="/shits" handler={() => Response.json(sillyShits)} />
     <Get
       pattern="/shits/random"
       handler={() => new Response(pickRandom(sillyShits))}
