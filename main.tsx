@@ -64,11 +64,14 @@ const router = (
             "</ul>" +
             "</body>" +
             "</html>",
-          { headers: { "Content-Type": "text/html" } }
-        )
-      }
+          { headers: { "Content-Type": "text/html" } },
+        )}
     />
-    <Get pattern="/jokes" handler={() => Response.json(sillyJokes)} />
+    <Get
+      pattern="/jokes"
+      handler={() =>
+        Response.json(sillyJokes)}
+    />
     <Get
       pattern="/jokes/random"
       handler={() => new Response(pickRandom(sillyJokes))}
