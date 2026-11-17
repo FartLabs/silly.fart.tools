@@ -69,8 +69,7 @@ const router = (
     />
     <Get
       pattern="/jokes"
-      handler={() =>
-        Response.json(sillyJokes)}
+      handler={() => Response.json(sillyJokes)}
     />
     <Get
       pattern="/jokes/random"
