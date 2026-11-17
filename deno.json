@@ -1,8 +1,11 @@
 {
   "lock": false,
   "tasks": {
-    "start": "deno serve main.tsx"
+    "start": "deno serve main.tsx",
+    "build": "deno bundle --platform=browser --output dist/worker.js main.tsx",
+    "check": "deno fmt --check && deno lint && deno task build"
   },
+  "fmt": { "lineWidth": 120, "newLineKind": "lf" },
   "imports": {
     "@fartlabs/rtx": "jsr:@fartlabs/rtx@^0.0.15"
   },
